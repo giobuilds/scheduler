@@ -84,7 +84,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     # Store python path in environment for subsequent build steps
     if(WIN32)
         SET(ENV{PYTHONPATH} "${CMAKE_SOURCE_DIR}/python\;$<TARGET_FILE_DIR:Scheduler>\;${GREENLET_PYTHON_MODULE_DIR}\;${GREENLET_IMPORTED_LOCATION_DIR}\;${Python3_STDLIB}")
-    elseif(APPLE)
+    else()
         SET(ENV{PYTHONPATH} "${CMAKE_SOURCE_DIR}/python:$<TARGET_FILE_DIR:Scheduler>:${GREENLET_PYTHON_MODULE_DIR}:${GREENLET_IMPORTED_LOCATION_DIR}:${Python3_STDLIB}")
     endif()
 
